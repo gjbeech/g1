@@ -23,7 +23,7 @@ function cn(...classes: string[]) {
 type Image = {
   id: number
   href: string
-  imageSrc: string
+  image_url: string
   name: string
   username: string
 }
@@ -46,9 +46,10 @@ function BlurImage({ image }: { image: Image }) {
   return (
     <a href={image.href} className="group">
       <div className="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-w-7 xl:aspect-h-8">
+        {image.image_url}
         <Image
           alt=""
-          src={image.imageSrc}
+          src={image.image_url}
           layout="fill"
           objectFit="cover"
           className={cn(
